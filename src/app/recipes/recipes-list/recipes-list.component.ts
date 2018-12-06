@@ -20,7 +20,13 @@ export class RecipesListComponent implements OnInit {
     new Recipe(
       "Diavola",
       "Lorem Pizza",
-      "http://www.planetpizzaal.it/castelletto/wp-content/uploads/pizza-diavola.jpg"
+      "http://www.planetpizzaal.it/castelletto/wp-content/uploads/pizza-diavola.jpg",
+      true
+    ),
+    new Recipe(
+      "Pollo arrosto",
+      "Lorem pollo",
+      "https://www.salepepe.it/files/2017/03/POLLO-ARROSTO.jpg"
     )
   ];
 

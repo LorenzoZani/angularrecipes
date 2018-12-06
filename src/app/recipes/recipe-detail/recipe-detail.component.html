@@ -1,0 +1,19 @@
+<div *ngIf="currentRicetta" class="card" style="width: 18rem">
+  <img
+    class="card-img-top"
+    [src]="currentRicetta.imagePath"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ currentRicetta.name }}</h5>
+    <p class="card-text">{{ currentRicetta.description }}</p>
+    <app-like [isLiked]="currentRicetta.liked"></app-like>
+  </div>
+</div>
+<div *ngIf="!currentRicetta">
+  <h3>
+    <p style="text-decoration:underline; text-decoration-color: crimson">
+      Seleziona una ricetta nella lista!
+    </p>
+  </h3>
+</div>

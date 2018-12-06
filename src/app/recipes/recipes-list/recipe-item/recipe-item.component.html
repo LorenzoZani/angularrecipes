@@ -1,12 +1,8 @@
-<div class="card" style="width: 18rem">
+<li class="list-group-item" (click)="onSelected()">
   <img
     class="card-img-top"
     [src]="currentRicetta.imagePath"
-    alt="Card image cap"
+    style="width: 100px; height: auto;"
   />
-  <div class="card-body">
-    <h5 class="card-title">{{ currentRicetta.name }}</h5>
-    <p class="card-text">{{ currentRicetta.description }}</p>
-    <a href="#" class="btn btn-primary">Just Eat!</a>
-  </div>
-</div>
+  <h5 class="card-title">{{ currentRicetta.name }}</h5>
+</li>

@@ -9,6 +9,10 @@ import { Component, OnInit, Input } from "@angular/core";
 export class RecipeItemComponent implements OnInit {
   @Input() currentRicetta: Recipe;
 
+  onSelected() {
+    console.log("Ricetta selezionata");
+  }
+
   constructor() {}
 
   ngOnInit() {}

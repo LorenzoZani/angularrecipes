@@ -1,5 +1,7 @@
 <!-- <app-recipe-item></app-recipe-item> -->
 <div>Numero di ricette: {{ recipes.length }}</div>
 
-<app-recipe-item *ngFor="let recipe of recipes" [currentRicetta]="recipe">
-</app-recipe-item>
+<ul class="list-group">
+  <app-recipe-item *ngFor="let recipe of recipes" [currentRicetta]="recipe">
+  </app-recipe-item>
+</ul>
