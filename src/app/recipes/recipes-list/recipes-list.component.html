@@ -2,6 +2,10 @@
 <div>Numero di ricette: {{ recipes.length }}</div>
 
 <ul class="list-group">
-  <app-recipe-item *ngFor="let recipe of recipes" [currentRicetta]="recipe">
+  <app-recipe-item
+    *ngFor="let recipe of recipes"
+    [currentRicetta]="recipe"
+    (selectedRecipe)="onSelectedList($event)"
+  >
   </app-recipe-item>
 </ul>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Recipe } from "./recipe.model";
 @Component({
   selector: "app-recipes-list",
@@ -20,8 +20,7 @@ export class RecipesListComponent implements OnInit {
     new Recipe(
       "Diavola",
       "Lorem Pizza",
-      "http://www.planetpizzaal.it/castelletto/wp-content/uploads/pizza-diavola.jpg",
-      true
+      "http://www.planetpizzaal.it/castelletto/wp-content/uploads/pizza-diavola.jpg"
     ),
     new Recipe(
       "Pollo arrosto",
@@ -29,6 +28,12 @@ export class RecipesListComponent implements OnInit {
       "https://www.salepepe.it/files/2017/03/POLLO-ARROSTO.jpg"
     )
   ];
+
+  @Output() selectedRecipe = new EventEmitter<Recipe>();
+  onSelectedList(recipe) {
+    console.log("Elemento lista selezionato", recipe);
+    this.selectedRecipe.emit(recipe);
+  }
 
   constructor() {}
 
