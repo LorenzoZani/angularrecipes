@@ -5,6 +5,7 @@
     alt="Card image cap"
   />
   <div class="card-body">
+    <span>{{ currentRicetta.createdAt | date }}</span>
     <h5 class="card-title">{{ currentRicetta.name }}</h5>
     <p class="card-text">{{ currentRicetta.description }}</p>
     <app-like [isLiked]="currentRicetta.liked"></app-like>
