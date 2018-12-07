@@ -18,6 +18,6 @@ export class AppComponent implements OnInit {
   constructor(private serv: RecipesService) {}
 
   ngOnInit() {
-    this.serv.searchRecipes("butter");
+    this.serv.searchRecipes("cake");
   }
 }
