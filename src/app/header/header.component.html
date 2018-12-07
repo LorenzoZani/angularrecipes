@@ -18,6 +18,7 @@
       type="search"
       placeholder="Search"
       [formControl]="searchTerm"
+      (keydown.enter)="submitSearch()"
     />
 
     <button

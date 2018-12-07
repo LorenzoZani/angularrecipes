@@ -11,10 +11,11 @@ export class RecipesService {
   public recipes: Recipe[] = [];
   public selectedRecipe: Recipe = null;
   newRecipes = new EventEmitter<Recipe[]>();
-
+  recipeChanged = new EventEmitter<Recipe>();
   public changeSelectedRecipe(ricetta: Recipe) {
     console.log("change selected recipe", ricetta);
     this.selectedRecipe = ricetta;
+    this.recipeChanged.emit(this.selectedRecipe);
   }
 
   public getRecipe() {
@@ -28,15 +29,19 @@ export class RecipesService {
       .toPromise()
       .then((resp: { meals: [] }) => {
         console.log("Ricette Ricevute", resp);
-        this.recipes = resp.meals.map(function(meal: any) {
-          console.log(meal);
-          const myRecipe = new Recipe(
-            meal.strMeal,
-            meal.strInstruction,
-            meal.strMealThumb
-          );
-          return myRecipe;
-        });
+        if (resp.meals) {
+          this.recipes = resp.meals.map(function(meal: any) {
+            console.log(meal);
+            const myRecipe = new Recipe(
+              meal.strMeal,
+              meal.strInstructions,
+              meal.strMealThumb
+            );
+            return myRecipe;
+          });
+        } else {
+          this.recipes = [];
+        }
         console.log("recipes mapped", this.recipes);
 
         this.newRecipes.emit(this.recipes);

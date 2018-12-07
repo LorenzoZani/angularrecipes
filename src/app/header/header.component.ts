@@ -9,8 +9,8 @@ import { FormControl } from "@angular/forms";
 })
 export class HeaderComponent implements OnInit {
   searchTerm = new FormControl("cake");
-  constructor(private service: RecipesService) {}
 
+  constructor(private service: RecipesService) {}
   submitSearch() {
     this.service.searchRecipes(this.searchTerm.value);
   }
