@@ -1,3 +1,4 @@
+import { RecipesService } from "./recipes.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -9,6 +10,7 @@ import { RecipesListComponent } from "./recipes/recipes-list/recipes-list.compon
 import { RecipeItemComponent } from "./recipes/recipes-list/recipe-item/recipe-item.component";
 import { LikeComponent } from "./like/like.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,8 +22,8 @@ import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.com
     LikeComponent,
     RecipeDetailComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [RecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
