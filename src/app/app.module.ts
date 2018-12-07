@@ -13,6 +13,8 @@ import { LikeComponent } from "./like/like.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 import { HttpClientModule } from "@angular/common/http";
 import { AbstractPipe } from './abstract.pipe';
+import { RecipesComponent } from './recipes/recipes.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AbstractPipe } from './abstract.pipe';
     RecipeItemComponent,
     LikeComponent,
     RecipeDetailComponent,
-    AbstractPipe
+    AbstractPipe,
+    RecipesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
